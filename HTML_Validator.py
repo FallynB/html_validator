@@ -15,6 +15,9 @@ def validate_html(html):
 
     stack = []
     tags = _extract_tags(html)
+    
+    if len(tags) == 0 and len(html) > 0:
+        return False
 
     for i in range(len(tags)):
         if '/' not in tags[i]:
